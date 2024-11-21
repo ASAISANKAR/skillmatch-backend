@@ -65,5 +65,13 @@ public class UserService {
 		return bb;
 	}
 	
+	public void updateProf(User u)
+	{
+		User us=userrepo.findByRoleSpecifiedId(u.getRole_specified_id());
+		u.setId(us.getId());
+		u.setRole(us.getRole());
+		userrepo.save(u);
+	}
+	
 	
 }
