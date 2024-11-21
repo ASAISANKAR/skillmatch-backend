@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.klu.jfsd.project.entity.Booking;
 import com.klu.jfsd.project.entity.Client;
+import com.klu.jfsd.project.entity.User;
 import com.klu.jfsd.project.service.ClientService;
 import com.klu.jfsd.project.service.UserService;
 
@@ -43,5 +44,11 @@ public class ClientController {
 	public List<Booking> booked()
 	{
 		return user.retrivebooking();
+	}
+	
+	@GetMapping("/retrieve")
+	public List<Client> retUsers()
+	{
+		return ser.retClients();
 	}
 }

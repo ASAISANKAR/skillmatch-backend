@@ -39,6 +39,10 @@ public class ClientService {
 	{
 		return profrepo.findAll();
 	}
+
+	public List<Client> retClients() {
+		return repo.findAll();
+	}
 	
 	
 	

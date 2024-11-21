@@ -38,6 +38,7 @@ public class UserController {
 	public User check(@RequestBody User u)
 	{
 		User rec=userser.verify(u);
+		System.out.println(rec.getId());
 		return rec;
 	}
 	
@@ -45,6 +46,12 @@ public class UserController {
 	public List<Professional> getprof()
 	{
 		return clser.getProf();
+	}
+	
+	@GetMapping("/retrieve")
+	public List<User> retrieve()
+	{
+		return userser.retUsers();
 	}
 	
 	

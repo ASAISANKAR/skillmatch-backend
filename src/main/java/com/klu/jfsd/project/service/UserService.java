@@ -73,5 +73,10 @@ public class UserService {
 		userrepo.save(u);
 	}
 	
+	public List<User> retUsers()
+	{
+		return userrepo.findAll();
+	}
+	
 	
 }
