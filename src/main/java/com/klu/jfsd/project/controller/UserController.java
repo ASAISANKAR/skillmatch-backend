@@ -38,8 +38,14 @@ public class UserController {
 	public User check(@RequestBody User u)
 	{
 		User rec=userser.verify(u);
+		if(rec!=null)
+		{
+			
 		System.out.println(rec.getId());
 		return rec;
+		}
+		else
+			return null;
 	}
 	
 	@GetMapping("/getprof")
