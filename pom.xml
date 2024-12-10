@@ -11,7 +11,7 @@
 	<groupId>com.klu.jfsd.project</groupId>
 	<artifactId>SkillMatch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>SkillMatch</name>
 	<description>JFSD Course Project</description>
 	<url/>
