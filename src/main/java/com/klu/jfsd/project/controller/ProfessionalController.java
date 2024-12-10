@@ -29,6 +29,11 @@ public class ProfessionalController {
 	public Professional addProfessional(@RequestBody Professional p)
 	{
 		System.out.println(profser.addProf(p));
+		String frommail="saisankar3193@gmail.com";
+		String toemail=p.getEmail();
+		String subject="welcome to the Skill Match";
+		String text="Thank you for choosing Skill Match\n\n Your Account has been created Successfully \n\n Username: "+p.getName();
+		System.out.println( profser.sendEmail(frommail, toemail, subject, text));
 		return p;
 		
 	}

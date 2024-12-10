@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.klu.jfsd.project.entity.Booking;
@@ -80,5 +81,27 @@ public class ProfessionalService {
 	public List<Professional> retProf()
 	{
 		return profrepo.findAll();
+	}
+	
+	@Autowired
+	JavaMailSender mail;
+	public String sendEmail(String fromemail,String toemail,String subject,String text)
+	{
+		try
+		{
+		SimpleMailMessage smm=new SimpleMailMessage();
+		smm.setFrom(fromemail);
+		smm.setTo(toemail);
+		smm.setSubject(subject);
+		smm.setText(text);
+		mail.send(smm);
+		return "email sent Successfully";
+		}
+		catch (Exception e) 
+		{
+			return e.getMessage();
+		}
+		
+	
 	}
 }

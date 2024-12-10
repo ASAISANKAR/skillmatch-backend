@@ -32,6 +32,11 @@ public class ClientController {
 	public Client addClient(@RequestBody Client c)
 	{
 		System.out.println(ser.addClient(c));
+		String frommail="saisankar3193@gmail.com";
+		String toemail=c.getEmail();
+		String subject="welcome to the Skill Match";
+		String text="Thank you for choosing Skill Match\n\n Your Account has been created Successfully \n\n Username: "+c.getName();
+		System.out.println( user.sendEmail(frommail, toemail, subject, text));
 		return c;
 		
 	}
